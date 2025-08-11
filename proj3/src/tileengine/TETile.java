@@ -22,7 +22,7 @@ import utils.RandomUtils;
  */
 
 public class TETile {
-    private final char character; // Do not rename character or the autograder will break.
+    private final char character;
     private final Color textColor;
     private final Color backgroundColor;
     private final String description;
@@ -99,8 +99,6 @@ public class TETile {
                 StdDraw.picture(x + 0.5, y + 0.5, filepath);
                 return;
             } catch (IllegalArgumentException e) {
-                // Exception happens because the file can't be found. In this case, fail silently
-                // and just use the character and background color for the tile.
             }
         }
 
@@ -158,7 +156,6 @@ public class TETile {
     private static int newColorValue(int v, int dv, Random r) {
         int rawNewValue = v + RandomUtils.uniform(r, -dv, dv + 1);
 
-        // make sure value doesn't fall outside of the range 0 to 255.
         int newValue = Math.min(255, Math.max(0, rawNewValue));
         return newValue;
     }

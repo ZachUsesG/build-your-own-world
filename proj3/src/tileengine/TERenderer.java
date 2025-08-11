@@ -114,4 +114,9 @@ public class TERenderer {
         Font font = new Font("Monaco", Font.BOLD, TILE_SIZE - 2);
         StdDraw.setFont(font);
     }
+    public void setOffset(int xOff, int yOff) {
+        this.xOffset = xOff;
+        this.yOffset = yOff;
+    }
+
 }
